@@ -1,0 +1,65 @@
+/* ==========================================
+   TEMA WARNA COKELAT BROWNIES & EFEK INTERAKTIF
+   ========================================== */
+body {
+    background: linear-gradient(135deg, #FDF6F0 0%, #F5EBE6 50%, #EEDCC5 100%);
+    color: #3D2314;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+}
+
+/* Efek Timbul & Melayang (Hover Lift & Glow Effect) */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(140, 67, 29, 0.15), 0 8px 10px -6px rgba(140, 67, 29, 0.1);
+}
+
+/* Efek Tombol Interaktif */
+.btn-interactive {
+    transition: all 0.2s ease-in-out;
+}
+.btn-interactive:active {
+    transform: scale(0.96);
+}
+
+/* Kustomisasi Scrollbar agar rapi */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #F5EBE6;
+}
+::-webkit-scrollbar-thumb {
+    background: #D0B4A0;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8C431D;
+}
+
+/* ==========================================
+   PENGATURAN KHUSUS CETAK STRUK
+   ========================================== */
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+    #receipt-modal, #receipt-modal *, #print-area, #print-area * {
+        visibility: visible !important;
+    }
+    #receipt-modal {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        background: white !important;
+        box-shadow: none !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+}
